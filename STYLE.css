@@ -1,0 +1,79 @@
+    home{
+        
+            position: relative;
+            width: 425%;
+            height: 425%;
+            margin-left: 60%;
+            top: 7%;
+            font-family: 'Trebuchet MS';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 200%;
+            line-height: 240%;
+    }
+
+    about{
+        
+        position: relative;
+        width: 425%;
+        height: 425%;
+        margin-left: 25px;
+        top: 7%;
+        font-family: 'Trebuchet MS';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 200%;
+        line-height: 240%;
+}
+    explore{
+        
+        position: relative;
+        width: 425%;
+        height: 425%;
+        margin-left: 25px;
+        top: 7%;
+        font-family: 'Trebuchet MS';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 200%;
+        line-height: 240%;
+}
+    contact{
+        
+        position: relative;
+        width: 425%;
+        height: 425%;
+        margin-left: 25px;
+        top: 7%;
+        font-family: 'Trebuchet MS';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 200%;
+        line-height: 240%;
+}
+    tracker{  
+        position: relative;
+        width: 425%;
+        height: 425%;
+        margin-left: 5%;
+        font-family: 'Trebuchet MS';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 200%;
+        line-height: 240%;
+    }
+
+    .selected{
+        color: #C211A1;
+    }
+
+    .Notselected{
+        color: white;
+    }
+
+    .boxed{
+        border: 25px solid #C211A1;
+        color: white;
+        background-color: #C211A1;
+        border-radius: 50px;
+    }
