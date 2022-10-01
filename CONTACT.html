@@ -4,10 +4,26 @@
     <link rel="stylesheet" href="STYLE.css">
 </head>
 
+<style>
+    body{
+        background-image: url(images/ImagenResto.png);
+        background-size: cover;
+    }
+</style>
+
 <body bgcolor="black">
-    <home class="Notselected">HOME</home>
-    <about class="Notselected">ABOUT</about>
-    <explore class="Notselected">EXPLORE</explore>
+    <home onclick="goto('index')" class="Notselected">HOME</home>
+    <about onclick="goto('ABOUT')" class="Notselected">ABOUT</about>
+    <explore onclick="goto('EXPLORE')" class="Notselected">EXPLORE</explore>
     <contact class="selected">CONTACT</contact>
+
+    <script>
+        function goto (str){
+            window.location.href = str + ".html";
+        }
+    </script>
+
+    <img src="images/HelloSpaceBoy.png">
+    <div class="">CONTACT</div>
 </body>
 </html>

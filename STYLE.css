@@ -63,6 +63,10 @@
         line-height: 240%;
     }
 
+    contact{
+        margin-right: 12%;
+    }
+
     .selected{
         color: #C211A1;
     }
@@ -77,3 +81,4 @@
         background-color: #C211A1;
         border-radius: 50px;
     }
+

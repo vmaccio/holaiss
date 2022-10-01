@@ -6,18 +6,18 @@
 
 <style>
     body{
-        background-image: url(images/ImagenResto.png);
+        background-image: url(images/ImagenHome.png);
         background-size: cover;
     }
 </style>
 
-<body bgcolor="black">
-    <home onclick="goto('index')" class="Notselected">HOME</home>
-    <about class="selected">ABOUT</about>
+<body background="images/ImagenHome.png">
+    <home class="selected">HOME</home>
+    <about  onclick="goto('ABOUT')" class="Notselected">ABOUT</about>
     <explore onclick="goto('EXPLORE')" class="Notselected">EXPLORE</explore>
     <contact onclick="goto('CONTACT')" class="Notselected">CONTACT</contact>
-    <div style="margin-left: 14%;">
-        <tracker onclick="goto('TRACKER')" class="boxed">LETS BEGIN</tracker>
+    <div style="margin-top: 30%;">
+        <tracker onclick="goto('TRACKER')" class="boxed">TRACK LIVE THE ISS</tracker>
     </div>
 
     <script>
