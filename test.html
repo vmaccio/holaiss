@@ -36,7 +36,7 @@
             <button onclick="changeNightSky()" id="nightSky" class="preferences">NIGHT</button>
             <button onclick="changeStars()" id="stars" class="preferences">STARS</button>
             <button onclick="changeAtmosphere()" id="atmosphere" class="preferences">ATMOSPHERE</button>
-         //   <button href="tbc" class="preferences">RETURN</button>
+            <button href="tbc" class="preferences">RETURN</button>
         </div>
     </div>
 
@@ -51,6 +51,7 @@
         // Create a WorldWindow for the canvas.
         var wwd = new WorldWind.WorldWindow("canvasOne");
 
+        // Load globe with all its default layers
         function loadGlobe() {
 
             var iss_longitude;
@@ -77,8 +78,6 @@
                 // Define image for placemark
                 var iss_image = new Image();
                 iss_image.src = "./ISSComplete1.png";
-                // iss_image.width = 64;
-                // iss_image.height = 64;
 
                 // Set placemark attributes.
                 var placemarkAttributes = new WorldWind.PlacemarkAttributes(null);
@@ -89,13 +88,6 @@
                 placemarkAttributes.imageScale = 0.05;
                 placemarkAttributes.imageColor = WorldWind.Color.WHITE;
 
-                // Set placemark highlight attributes.
-                // Note that the normal attributes are specified as the default highlight attributes so that all properties
-                // are identical except the image scale. You could instead vary the color, image, or other property
-                // to control the highlight representation.
-              /*  var highlightAttributes = new WorldWind.PlacemarkAttributes(placemarkAttributes);
-                highlightAttributes.imageScale = 1.2;*/
-
                 // Create the placemark with the attributes defined above.
                 var placemarkPosition = new WorldWind.Position(iss_latitude, iss_longitude, 1e2);
                 var placemark = new WorldWind.Placemark(placemarkPosition, false, placemarkAttributes);
@@ -103,25 +95,17 @@
                 // Get ISS coordinates
                 function fetch() {
                     $.getJSON('http://api.open-notify.org/iss-now.json', function(result) {
-
-                        /*$("div.timestamp").text("time: " + result.timestamp);
-                        $("div.longitude").text("longitude: " + result.iss_position.longitude);
-                        $("div.latitude").text("latitude: " + result.iss_position.latitude);*/
-
                         iss_latitude = result.iss_position.latitude;
                         iss_longitude = result.iss_position.longitude;
                         placemarkPosition.latitude = result.iss_position.latitude;
                         placemarkPosition.longitude = result.iss_position.longitude;
                         placemark.position = placemarkPosition;
-
                     });
                 }
                 setInterval(fetch, 1000);   // call fetch every second
 
                 // Draw placemark at altitude defined above, relative to the terrain.
                 placemark.altitudeMode = WorldWind.RELATIVE_TO_GROUND;
-                // Assign highlight attributes for the placemark.
-             //   placemark.highlightAttributes = highlightAttributes;
 
                 // Create the renderable layer for placemarks.
                 var placemarkLayer = new WorldWind.RenderableLayer("Custom Placemark");
@@ -131,7 +115,6 @@
 
                 // Add the placemarks layer to the WorldWindow's layer list.
                 wwd.addLayer(placemarkLayer);
-
             }
         };
 
@@ -174,8 +157,7 @@
             }
         }
 
-        loadGlobe(); // load WorldWind
+        loadGlobe(); // load WorldWind globe
     </script>
-
 </body>
 </html>
