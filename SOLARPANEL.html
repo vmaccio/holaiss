@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="STYLE.css">
+    <title>Hello ISS!</title>
+</head>
+
+<style>
+    body{
+        background-image: url(images/ImagenResto.png);
+        background-size: cover;
+    }
+</style>
+
+<body bgcolor="black">
+    <home onclick="goto('index')" class="Notselected">HOME</home>
+    <about onclick="goto('ABOUT')" class="Notselected">ABOUT</about>
+    <explore onclick="goto('EXPLORE')" class="Notselected">EXPLORE</explore>
+    <contact onclick="goto('CONTACT')" class="Notselected">CONTACT</contact>
+    <div class="aboutStyle">SOLAR PANELS</div>
+
+    <script>
+        function goto (str){
+            window.location.href = str + ".html";
+        }
+    </script>
+<p class="extraStyle">Shape and function of the panels:<br>
+    Each Solar Array Wing (SAW) has 2 blankets of 32,800 solar cells, converting sunlight to DC power and producing a maximum of 31 kW at the beginning of its life and degrading to 26 kW after 15 years. Each cell is approximately 14% efficient, which was state-of-the-art at the time of design.
+
+    <br><br>Battery:<br>
+    Nickel-Hydrogen Batteries store electrical energy that is harvested by the SAWs. Starting in 2017, the Nickel-Hydrogen battery ORUs will be replaced by Lithium-ion batteries. Due to the higher level of specific energy, one Lithium-Ion battery ORU will take the place of two Nickel-Hydrogen batteries.
+
+    <br><br>Lifetime of the solar panels:<br>
+    Designed for a 15-year lifetime, the solar arrays have been operating continuously since the first pair was deployed in December 2000, with additional array pairs delivered in September 2006, June 2007 and March 2009. The first pair of solar arrays has now provided continuous electrical power to the station for more than 20 years as more modules were added and dozens of crews tackled thousands of science experiments and continuous operations through hundreds of spacewalks, cargo missions and more.
+
+    <img src="images/SOLARPANELS1.jpg" style="position: relative; right: 125%;top: 100%; width: 105%; height: auto;  border-radius: 50px">
+</p>
+    <home onclick="goto('PANELORIEN')" class="boxed">PANEL ORIENTATION</home>
+</body>
+</html>

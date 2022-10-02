@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="STYLE.css">
+    <title>Hello ISS!</title>
+</head>
+
+<style>
+    body{
+        background-image: url(images/ImagenResto.png);
+        background-size: cover;
+    }
+</style>
+
+<body bgcolor="black">
+    <home onclick="goto('index')" class="Notselected">HOME</home>
+    <about onclick="goto('ABOUT')" class="Notselected">ABOUT</about>
+    <explore onclick="goto('EXPLORE')" class="Notselected">EXPLORE</explore>
+    <contact onclick="goto('CONTACT')" class="Notselected">CONTACT</contact>
+    <div class="aboutStyle">PANEL ORIENTATION</div>
+
+    <script>
+        function goto (str){
+            window.location.href = str + ".html";
+        }
+    </script>
+<p class="extraStyle">Each array is mounted on an accordion-folded racking system designed to be transported into orbit compressed and then unfolded to its full length when deployed. These fold-out racks of panels are referred to as “blankets.” The station began its life with just one set of blankets, and now has four sets, the latest having been installed in 2009.
+
+    <br>Because of the constant and rapid changing position of the station in its elliptical orbit, the racks include gimbals that continually rotate the panels to face the sun. Similar to a dual-axis tracker used here on Earth to track the sun at both time of day and time of year, The ISS system uses an “alpha” gimbal to track the position of the sun while the “beta” gimbal adjusts to compensate for the elliptical orbit.
+
+    <img src="images/PANELORIENTATION.png" style="position: relative; right: 125%;top: 100%; width: 105%; height: auto; border-radius: 50px">
+</p>
+</body>
+</html>

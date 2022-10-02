@@ -128,7 +128,8 @@
         font-weight: 400;
         font-size: 100%;
         line-height: 240%;
-        max-width: 30%;
+        max-width: 40%;
         border: 10px solid #C211A1;
         border-radius: 50px;
+        align-content: center;
     }
