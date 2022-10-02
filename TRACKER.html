@@ -90,8 +90,6 @@
                 // Define image for placemark
                 var iss_image = new Image();
                 iss_image.crossOrigin = "anonymous";
-                iss_image.width = "64";
-                iss_image.height = "64";
                 iss_image.src = "./images/ISSWhite.png"; 
 
                 // Set placemark attributes.
@@ -109,14 +107,14 @@
 
                 // Get ISS coordinates
                 function fetch() {
-                    var coordinatesURL = new URL('http://api.open-notify.org/iss-now.json');
+                    var coordinatesURL = new URL('https://api.wheretheiss.at/v1/satellites/25544');
                     coordinatesURL.crossOrigin = "anonymous";
 
                     $.getJSON(coordinatesURL, function(result) {
-                        iss_latitude = result.iss_position.latitude;
-                        iss_longitude = result.iss_position.longitude;
-                        placemarkPosition.latitude = result.iss_position.latitude;
-                        placemarkPosition.longitude = result.iss_position.longitude;
+                        iss_latitude = result.latitude;
+                        iss_longitude = result.longitude;
+                        placemarkPosition.latitude = result.latitude;
+                        placemarkPosition.longitude = result.longitude;
                         placemark.position = placemarkPosition;
                     });
                 }
