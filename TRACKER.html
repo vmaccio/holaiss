@@ -3,6 +3,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
     <title>WorldWind Example</title>
     <!-- Include the Web WorldWind library. -->
     <script src="https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/worldwind.min.js"
@@ -76,8 +77,25 @@
                 wwd.addLayer(atmosphereLayer);
 
                 // Define image for placemark
-                var iss_image = new Image();
-                iss_image.src = "./images/ISSWhite.png";
+                 var iss_image = new Image();
+                iss_image.crossOrigin = "anonymous";
+              //  iss_image.width = "64";
+                //iss_image.height = "64";
+                iss_image.src = "./images/ISSWhite.png"; 
+
+                /* var iss_image = new Image,
+                    canvas = document.createElement("canvas"),
+                    ctx = canvas.getContext("2d"),
+                    src = "./images/ISSWhite.png"; // insert image url here
+
+                iss_image.crossOrigin = "Anonymous";
+
+                iss_image.onload = function() {
+                    canvas.width = iss_image.width;
+                    canvas.height = iss_image.height;
+                    ctx.drawImage( iss_image, 0, 0 );
+                    localStorage.setItem("savedImageData", canvas.toDataURL("image/png"));
+                } */
 
                 // Set placemark attributes.
                 var placemarkAttributes = new WorldWind.PlacemarkAttributes(null);
@@ -94,7 +112,19 @@
 
                 // Get ISS coordinates
                 function fetch() {
-                    $.getJSON('http://api.open-notify.org/iss-now.json', function(result) {
+                    var coordinatesURL = new URL('http://api.open-notify.org/iss-now.json');
+                    coordinatesURL.crossOrigin = "anonymous";
+                    if (window.location.protocol == 'https:') {
+	
+	                    console.log("https to http");
+		
+                        window.location.href = window.location.href.replace('https:', 'http:');
+                    } else {
+                        console.log("http");
+                    }
+
+
+                    $.getJSON(coordinatesURL, function(result) {
                         iss_latitude = result.iss_position.latitude;
                         iss_longitude = result.iss_position.longitude;
                         placemarkPosition.latitude = result.iss_position.latitude;
