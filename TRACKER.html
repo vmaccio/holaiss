@@ -88,8 +88,10 @@
                 wwd.addLayer(atmosphereLayer);
 
                 // Define image for placemark
-                 var iss_image = new Image();
+                var iss_image = new Image();
                 iss_image.crossOrigin = "anonymous";
+                iss_image.width = "64";
+                iss_image.height = "64";
                 iss_image.src = "./images/ISSWhite.png"; 
 
                 // Set placemark attributes.
